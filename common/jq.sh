@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _jq_vtype() {
-    printf "%s" "$1" | awk -v k="$2" -e \
+    printf "%s" "$1" | awk -v k="$2" \
 '
 BEGIN {
     null     = "null"
@@ -70,7 +70,7 @@ END { print t }
 }
 
 _jq_num() {
-    printf "%s" "$1" | awk -v k="$2" -e \
+    printf "%s" "$1" | awk -v k="$2" \
 '
 BEGIN { 
     start = -1
@@ -112,7 +112,7 @@ END { print v }
 }
 
 _jq_str() {
-    printf "%s" "$1" | awk -v k="$2" -e \
+    printf "%s" "$1" | awk -v k="$2" \
 '
 BEGIN { 
     start = -1
@@ -157,7 +157,7 @@ END { print v }
 }
 
 _jq_obj() {
-    printf "%s" "$1" | awk -v k="$2" -e \
+    printf "%s" "$1" | awk -v k="$2" \
 '
 BEGIN { 
     start = -1
@@ -213,7 +213,7 @@ END { print v }
 }
 
 _jq_arr_elem() {
-    printf "%s" "$1" | awk -v k="$2" -e \
+    printf "%s" "$1" | awk -v k="$2" \
 '
 # [0,"",{},[],]
 BEGIN { 
