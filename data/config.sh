@@ -30,5 +30,7 @@ export DNSPOD_API_TOKEN=""
 export DNSPOD_DOMAIN=""
 # 子域名，例如 home，即域名前缀
 export DNSPOD_SUB_DOMAIN=""
+# IPv4: A, IPv6: AAAA
+export DNSPOD_RECORD_TYPE="A"
 # 本设备名
 export DNSPOD_DEV_NAME=""

@@ -99,7 +99,12 @@ BEGIN {
             continue
         }
 
-        if (chars[i] !~ "[0-9]") exit
+        if (chars[i] == ".") {
+            if (has_dot == 0)
+                has_dot = 1
+            else
+                exit
+        } else if (chars[i] !~ "[0-9]") exit
 
         v = v""chars[i]
     }

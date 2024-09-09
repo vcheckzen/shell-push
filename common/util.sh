@@ -20,7 +20,9 @@ post_json() {
 
 get_ip1() {
     # https://unix.stackexchange.com/questions/8518/how-to-get-my-own-ip-address-and-save-it-to-a-variable-in-a-shell-script
-    ip route get 1 |
+    _test_ip="1"
+    [ "$DNSPOD_RECORD_TYPE" = "AAAA" ] && _test_ip="1::"
+    ip route get "$_test_ip" |
         sed -nr "/src/{s/.*?src *?([^ ]+?).*?/\1/p;q}"
 }
 
